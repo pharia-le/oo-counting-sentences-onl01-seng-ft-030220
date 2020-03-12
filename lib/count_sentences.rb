@@ -14,20 +14,24 @@ class String
     self.end_with?("!")
   end
 
-   def count_sentences
-    return 0 if self.length == 0 
+  # def count_sentences
+  #   return 0 if self.length == 0 
     
-    count = 0
-    i = 0
-    marks = [".", "?", "!"]
+  #   count = 1
+  #   i = 0
+  #   marks = [".", "?", "!"]
 
-    while i < self.length-1
-      if marks.include?(self[i]) && (marks.include?(self[i]) != marks.include?(self[i+1]))
-        count+=1
-      end
-      i+=1
-    end
-    count + 1
+  #   while i < self.length-1
+  #     if marks.include?(self[i]) && (marks.include?(self[i]) != marks.include?(self[i+1]))
+  #       count+=1
+  #     end
+  #     i+=1
+  #   end
+  #   count
+  # end
+  
+  def count_sentences
+    self.split(/[.?!]+/).count
   end
   
 end
